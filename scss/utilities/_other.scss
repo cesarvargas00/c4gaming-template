@@ -1,0 +1,19 @@
+
+.border-radius-large {
+	border-radius: 30px;
+}
+
+.border-radius-100 {
+	border-radius: 50%;
+}
+
+@for $i from 1 through 9 {
+	$weight: 100 * $i;
+	.font-weight-#{$weight} {
+		font-weight: $weight !important;
+	}
+}
+
+.m-w-200 {
+	min-width: 200px;
+}

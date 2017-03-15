@@ -1,0 +1,60 @@
+// Width
+
+.w-100 { width: 100% !important; }
+
+// Margin and Padding
+
+.m-x-auto {
+  margin-right: auto !important;
+  margin-left:  auto !important;
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @for $size from 0 through 20 {
+    $length-y: $size * 5px;
+    $length-x: $size * 5px;
+    $size: $size * 5;
+    .#{$abbrev}-a-#{$size} { #{$prop}:        $length-y $length-x !important; } // a = All sides
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length-y !important; }
+    .#{$abbrev}-r-#{$size} { #{$prop}-right:  $length-x !important; }
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length-y !important; }
+    .#{$abbrev}-l-#{$size} { #{$prop}-left:   $length-x !important; }
+
+    // Axes
+    .#{$abbrev}-x-#{$size} {
+      #{$prop}-right:  $length-x !important;
+      #{$prop}-left:   $length-x !important;
+    }
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length-y !important;
+      #{$prop}-bottom: $length-y !important;
+    }
+  }
+}
+
+// Positioning
+
+.pos-f-t {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navbar-fixed;
+}
+
+// Line height, size
+
+@for $i from 1 through 70 {
+  .line-height-#{$i} {
+    line-height: 1px * $i !important;
+  }
+  .font-size-#{$i} {
+    font-size: 1px * $i !important;
+  }
+}
+
+// Color
+
+.text-theme {
+  color: $theme-color !important;
+}

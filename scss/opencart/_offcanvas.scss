@@ -1,0 +1,167 @@
+// ======================================
+// --------------- Offcanvas ------------
+// ======================================
+
+$offcanvas-left-width: 300px !default;
+$offcanvas-left-height: 100% !default;
+
+$offcanvas-right-width: 300px !default;
+$offcanvas-right-height: 100% !default;
+
+$offcanvas-top-width: 100% !default;
+$offcanvas-top-height: 300px !default;
+
+$offcanvas-bottom-width: 100% !default;
+$offcanvas-bottom-height: 300px !default;
+
+.off-canvas-base {
+  position: absolute;
+  background-color: #000;
+  z-index: 999;
+  top: 0;
+  &.off-canvas-left {
+    left: 0;
+  }
+
+  &.off-canvas-right {
+    right: 0;
+  }
+}
+
+.offcanvas-bottom {
+  a {
+    color: #8A91A4;
+  }
+}
+
+#close-offcanvas {
+  color: #000;
+}
+
+@mixin off-canvas-position(
+  $position: left,
+  $width: 300px,
+  $height: 100%,
+  $fixed: false,
+  $movecontent: false
+) {
+  @if $position == left {
+
+    @if ($movecontent == true) {
+      @at-root {
+        &.is-#{$position}-open .dtn-content {
+          @include translate3d($width, 0, 0);
+        }
+      }
+    }
+
+    .off-canvas-#{$position} {
+      @include transition(all .3s);
+      @include translate3d(-$width, 0, 0);
+      width: $offcanvas-left-width;
+      height: $offcanvas-left-height;
+    }
+  } @else if $position == right {
+
+    @if ($movecontent == true) {
+      @at-root {
+        &.is-#{$position}-open .dtn-content {
+          @include translate3d(-$width, 0, 0);
+        }
+      }
+    }
+
+    .off-canvas-#{$position} {
+      @include transition(all .3s);
+      @include translate3d($width, 0, 0);
+      width: $width;
+      height: $height;
+    }
+  } @else if $position == top {
+
+      @if ($movecontent == true) {
+        @at-root {
+          &.is-#{$position}-open .dtn-content {
+            @include translate3d(0, $height, 0);
+          }
+        }
+      }
+
+      .off-canvas-#{$position} {
+        @include transition(all .3s);
+        @include translate3d(0, -$height , 0);
+        width: $width;
+        height: $height;
+      }
+  } @else if $position == bottom {
+
+      @if ($movecontent == true) {
+        @at-root {
+          &.is-#{$position}-open .dtn-content {
+            @include translate3d(0, -$height, 0);
+          }
+        }
+      }
+
+      .off-canvas-#{$position} {
+        @include transition(all .3s);
+        @include translate3d(0, $height , 0);
+        width: $width;
+        height: $height;
+        // visibility: hidden;
+      }
+  }
+
+  @at-root {
+    .is-#{$position}-open {
+      .off-canvas-#{$position} {
+        @include translate3d(0, 0, 0);
+        @if $fixed == true {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  @if $fixed == true {
+    .off-canvas-#{$position} {
+      position: fixed;
+    }
+  }
+}
+
+.effect-left-push { @include off-canvas-position( left, $offcanvas-left-width, $offcanvas-left-height, false, true) };
+.effect-right-push { @include off-canvas-position( right, $offcanvas-right-width, $offcanvas-right-height, false, true ) };
+
+
+.effect-left-slide { @include off-canvas-position( left, $offcanvas-left-width, $offcanvas-left-height, false, false) };
+.effect-right-slide { @include off-canvas-position( right, $offcanvas-right-width, $offcanvas-right-height, false, false ) };
+
+.toggle-offcanvas {
+  position: absolute;
+  top: calc(50% - 15px);
+  z-index: 999;
+}
+
+@mixin toggle-offcanvas ($position: left) {
+  .toggle-offcanvas.#{$position} {
+    @if $position == left {
+      left: 10px;
+    }
+    @if $position == right {
+      right: 10px;
+    }
+    @if $position == top {
+      left: calc(50% - 15px);
+      bottom: 10px;
+    }
+    @if $position == bottom {
+      left: calc(50% - 15px);
+      top: 10px;
+    }
+  }
+}
+
+@include toggle-offcanvas(left);
+@include toggle-offcanvas(right);
+

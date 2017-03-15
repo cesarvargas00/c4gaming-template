@@ -1,0 +1,93 @@
+.dtn-blog {
+	border-radius: 5px;
+	margin-bottom: 140px;
+	.image {
+		img {
+			@include border-top-radius(5px);
+		}
+	}
+
+	// Blog heading
+	.name {
+		font-family: $font-family-lato;
+		font-size: 48px;
+		font-weight: 900;
+	}
+
+	.dtn-blog-content {
+		padding: 40px;
+		background-color: #fff;
+		color: #202020;
+		@include border-bottom-radius(5px);
+		//font-family: $font-family-sans-serif;
+		font-family: $font-family-open-sans;
+		font-size: 16px;
+
+		line-height: 1.5;
+
+	}
+
+	.info {
+		font-size: 12px;
+		font-weight: bold;
+		.fa {
+			font-size: 14px;
+		}
+	}
+
+	.social {
+		.btn {
+			padding-left: 15px;
+			padding-right: 15px;
+			width: 90px;
+			font-weight: 400;
+		}
+
+		.fa {
+			line-height: 1.4;
+			font-size: 16px;
+		}
+
+		span {
+			line-height: 1.4 * 16px;
+		}
+	}
+
+	.form-message {
+		font-size: 14px;
+		background-color: #f4f4f4;
+		border-color: #e3e8f0;
+		border-radius: 4px;
+	}
+	
+}
+
+.col-75 {
+	padding-left: 15px;
+	padding-right: 10px;
+	width: 70px;
+	float: left;
+	min-height: 1px;
+}
+
+.col-rest {
+	min-height: 1px;
+	width: calc(100% - 80px);
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.comment-item {
+	.user-name {
+		font-weight: bold;
+		font-family: $font-family-lato;
+		font-size: 14px;
+	}
+
+	.date {
+		line-height: 20px;
+		font-size: 12px;
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,98 @@
+@media (min-width: $screen-md-min) {
+	
+	// layout
+	.common-home .header {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		z-index: 9;
+	}	
+
+	body[class|=product-product] {
+		background-image: url("../image/bg-product.png");
+		background-size: 100%;
+	  	background-repeat: no-repeat;
+		
+		.header {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			left: 0;
+			z-index: 9;
+		}
+	}
+
+	// Blog latest
+	.blog-latest {
+		.blog-row {
+			.blog-column {
+				&:first-child {
+					width: 66.66%;
+					.sort-description {
+						display: block;
+					}
+
+					.description {
+						padding: 37px 43px;
+					}
+
+					.name {
+						a {
+							font-size: 32px;
+						}
+					}
+					.read-more {
+						display: block;
+					}
+
+					.date, .comments{
+						float: right;
+					}
+
+					.info {
+						margin-top: 40px;
+					}
+				}
+
+				.date, .comments{
+					float: left;
+				}
+
+				.sort-description {
+					display: none;
+				}
+
+				.read-more {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// Blog latest page blogs
+	.dtn-blog-item {
+		&:not(.first) {
+			img {
+				width: 570px;
+				height: 340px;
+			}
+		}
+
+		&.first {
+			img {
+				min-height: 710px;
+			}
+		}
+	}
+
+}
+
+@media (max-width: $screen-xs-max) {
+	.logo {
+		text-align: center;
+		img {
+			display: inline-block;
+		}
+	}
+}

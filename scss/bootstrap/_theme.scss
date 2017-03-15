@@ -1,0 +1,201 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Common styles
+.btn {
+
+  text-transform: uppercase;
+  font-weight: bold;
+
+  // Remove the gradient for the pressed/active state
+  &:active,
+  &.active {
+   
+  }
+}
+
+.btn-lg {
+  line-height: 20px;
+  font-size: 12.5px;
+}
+
+.btn-facebook {
+  @include button-variant(#fff, #4c5bb4, #4c5bb4);
+}
+
+.btn-twitter {
+  @include button-variant(#fff, #55acee, #55acee);
+}
+
+.btn-google {
+  @include button-variant(#fff, #df4b38, #df4b38);
+}
+
+.btn-border {
+  border-width: 2px;
+  @include button-variant(#fff, transparent, #3e3e3e);
+}
+
+//
+// Images
+// --------------------------------------------------
+
+//
+// Images
+// --------------------------------------------------
+
+.list-group {
+  
+}
+
+.list-group-item {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: $list-group-border-radius;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+//
+// Dropdowns
+// --------------------------------------------------
+
+//
+// Breadcrumb
+// --------------------------------------------------
+
+.breadcrumb {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  > li {
+    + li:before {
+      
+    }
+  }
+
+  > .active {
+    
+  }
+}
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+#menu {
+  margin-bottom: 0;
+  .nav {
+    >li {
+      >a {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 0px 0px 3px black;
+      }
+    }
+  }
+}
+
+// Default navbar
+
+
+
+// Inverted navbar
+
+
+// Undo rounded corners in static and fixed navbars
+
+
+// Fix active state of dropdown items in collapsed mode
+
+
+
+//
+// Alerts
+// --------------------------------------------------
+
+// Common styles
+
+
+// Mixin for generating new styles
+
+
+// Apply the mixin to the alerts
+
+
+
+//
+// Progress bars
+// --------------------------------------------------
+
+// Give the progress background some depth
+
+// Mixin for generating new styles
+
+
+// Apply the mixin to the progress bars
+
+
+// Reset the striped class because our mixins don't do multiple gradients and
+// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
+
+
+//
+// List groups
+// --------------------------------------------------
+
+//
+// List groups
+// --------------------------------------------------
+label {
+  margin-bottom: 10px;
+}
+
+
+
+//
+// Panels
+// --------------------------------------------------
+
+.panel-default {
+  > .panel-heading {
+    border-bottom-color: #3f3f40;
+  }
+} 
+
+.panel-title {
+  text-transform: uppercase;
+}
+
+
+//
+// Wells
+// --------------------------------------------------
+
+//
+// Alert
+// --------------------------------------------------
+
+.alert {
+  a {
+    color: $theme-color;
+  }
+}
